@@ -1,0 +1,16 @@
+class View
+
+
+#HERE.DOC TO RULE ALL THE FORMATTING!
+<<-STRING
+
+
+
+
+STRING
+
+
+
+
+
+end
