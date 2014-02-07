@@ -8,19 +8,23 @@ class Card
 end
 
 class Deck
-  attr_reader :file_name
-  def initialize(file_name)
-    @file_name = file_name
+  attr_reader :csv_file
+  def initialize(csv_file)
+    @csv_file = csv_file
     @contents = []
   end
 
   def parse_file
-    #CSV.foreach{}
+    csv_file.each{|args| contents << add_card(args)}
   end
 
   def add_card(args)
     Card.new(args)
   end
+
+  private
+  attr_accessor :contents
+
 end
 
 
