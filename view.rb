@@ -4,9 +4,9 @@ class View
 
   def greet
     puts "Welcome to Ruby Flashcards!!"
-    puts Rainbow(
+    puts (
 <<-STRING
-\033[1m\033[36m
+\033[1m\033[36m\033[5m
 ___________________________________  __
 ___  ____/__  /___    |_  ___/__  / / /
 __  /_   __  / __  /| |____ \\__  /_/ /
@@ -20,12 +20,12 @@ _  /    __  /| |_  /_/ /_  / / /____ \\__  /
 
 
 STRING
-).blink
+)
     puts "We'll be showing you definitions of ruby terms, and it's up to you to figure out the term we're describing.  Enter a term after we give the definition, or say 'exit' at any time to quit the program.  Good luck!\n "
   end
 
   def show_definition(definition, card_counter)
-    puts "Card Number #{card_counter}:  \n\n#{definition}"
+    print "Card Number #{card_counter}:  \n\n#{definition}\n\nYour guess: "
   end
 
   def get_input
@@ -35,7 +35,7 @@ STRING
   def correct_answer
     puts <<-STRING
 \033[32m
-correct\033[0m
+Awwwww yisssssss!  You are CORRECT!!!\033[0m
 
 STRING
   end
@@ -43,7 +43,8 @@ STRING
   def incorrect_answer
     puts <<-STRING
 \033[31m
-incorrect\033[0m
+Yikes!  That's a no-go.  Got another guess?\033[0m
+
 STRING
   end
 end
