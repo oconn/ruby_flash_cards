@@ -2,45 +2,30 @@ require 'rainbow'
 
 class View
 
-
-#HERE.DOC TO RULE ALL THE FORMATTING!
-# <<-STRING
-
-
-
-
-# STRING
-
   def greet
     puts "Welcome to Ruby Flashcards!!"
     puts Rainbow(
 <<-STRING
-\033[36m
+\033[1m\033[36m
 ___________________________________  __
 ___  ____/__  /___    |_  ___/__  / / /
 __  /_   __  / __  /| |____ \\__  /_/ /
 _  __/   _  /___  ___ |___/ /_  __  /
-/_/      /_____/_/  |_/____/ /_/ /_/
-
+/_/      /_____/_/  |_/____/ /_/ /_/\033[32m
 ____________________________________________
 __  ____/__    |__  __ \\__  __ \\_  ___/__  /
 _  /    __  /| |_  /_/ /_  / / /____ \\__  /
 / /___  _  ___ |  _, _/_  /_/ /____/ / /_/
 \\____/  /_/  |_/_/ |_| /_____/ /____/ (_)\033[0m
+
+
 STRING
 ).blink
-    puts "play it okay"
-
+    puts "We'll be showing you definitions of ruby terms, and it's up to you to figure out the term we're describing.  Enter a term after we give the definition, or say 'exit' at any time to quit the program.  Good luck!\n "
   end
 
-  def show_definition(definition)
-    puts definition
-<<-STRING
-
-#{definition}
-
-
-STRING
+  def show_definition(definition, card_counter)
+    puts "Card Number #{card_counter}:  \n\n#{definition}"
   end
 
   def get_input
@@ -51,6 +36,7 @@ STRING
     puts <<-STRING
 \033[32m
 correct\033[0m
+
 STRING
   end
 
