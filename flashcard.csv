@@ -9,7 +9,7 @@ id,definition,answer
 8,"Used to define a function.",def
 9,"A boolean logic function that asks whether or not a targeted expression refers to anything recognizable in Ruby; i.e. literal object, local variable that has been initialized, method name visible from the current scope, etc.",defined?
 10,"Paired with end, this can delimit a code block, much like curly braces; however, curly braces retain higher precedence.",do
-11,"Gives an 'otherwis' within a function, if-statement, or for-loop, i.e. if cats = cute, puts 'Yay!'' else puts 'Oh, a cat.'",else
+11,"Gives an 'otherwise' within a function, if-statement, or for-loop, i.e. if cats = cute, puts 'Yay!'' else puts 'Oh, a cat.'",else
 12,"Much like else, but has a higher precedence, and is usually paired with terms.",elsif
 13,"Designates, via code block, code to be executed just prior to program termination.",END
 14,"Marks the end of a while, until, begin, if, def, class, or other keyword-based, block-based construct.",end
