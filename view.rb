@@ -35,11 +35,23 @@ STRING
   def skip_card
     puts (
 <<-STRING
-\033[32m
+\033[36m
 It's your funeral!  On to the next card.
 \033[0m
 STRING
       )
+  end
+
+  def game_over(total_cards, correct_cards)
+    puts <<-STRING
+
+GAME OVER
+
+Your score:
+#{correct_cards} correct out of #{total_cards} cards
+
+STRING
+    exit
   end
 
   def correct_answer

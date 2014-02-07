@@ -2,14 +2,13 @@ require 'csv'
 
 
 class Card
-  attr_accessor :used , :current_card
+  attr_accessor :used
   attr_reader :definition, :answer,:id
   def initialize(args)
     @id = args[:id]
     @definition = args[:definition]
     @answer = args[:answer]
     @used = false
-    @current_card = nil
   end
 
   def has_been_used
@@ -26,15 +25,17 @@ class Card
 end
 
 class Deck
+  attr_accessor :current_card
   attr_reader :csv_file, :contents
   def initialize#(csv_file)
     #@csv_file = csv_file
     @contents = []
     populate_contents
+    @current_card = nil
   end
 
   def populate_contents
-    CSV.foreach('flashcard.csv', headers: true, :header_converters => :symbol) do |row|
+    CSV.foreach('test.csv', headers: true, :header_converters => :symbol) do |row|
       self.contents << add_card(row)
     end
   end
@@ -48,9 +49,18 @@ class Deck
     card
   end
 
+  def size
+    contents.length
+  end
+
   def new_card
-    self.current_card = contents.select{|card| card.used == false}.sample
+    return "empty" if available_cards.empty?
+    self.current_card = available_cards.sample
     change_card_status(current_card)
+  end
+
+  def available_cards
+    contents.select{|card| card.used == false}
   end
 
   def add_card(args)
