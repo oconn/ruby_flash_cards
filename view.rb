@@ -48,18 +48,16 @@ STRING
   end
 
   def correct_answer
-    puts "yay you did it"
-<<-STRING
-
-correct
+    puts <<-STRING
+\033[32m
+correct\033[0m
 STRING
   end
 
   def incorrect_answer
-    puts "incorrect try again"
-<<-STRING
-
-incorrect
+    puts <<-STRING
+\033[31m
+incorrect\033[0m
 STRING
   end
 end

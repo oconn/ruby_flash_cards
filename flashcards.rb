@@ -25,7 +25,7 @@ class Controller
   def give_definition
     new_card = deck.new_card
     self.current_answer = new_card.answer
-    view.show_definition(new_card.definition)
+    view.show_definition(new_card)
   end
 
   def parse_user_input

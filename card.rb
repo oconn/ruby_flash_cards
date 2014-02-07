@@ -16,7 +16,7 @@ class Card
   end
 
   def to_s
-    "\033[36m#{definition}\033[0m - \033[5m\033[1m\033[32m#{answer}\033[0m"
+    "\033[36m#{definition}\033[0m"
   end
 end
 
@@ -50,5 +50,4 @@ class Deck
 
   private
   attr_writer :contents
-
 end
