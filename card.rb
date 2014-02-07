@@ -29,7 +29,7 @@ class Deck
 
   def populate_contents
     CSV.foreach('flashcard.csv', headers: true, :header_converters => :symbol) do |row|
-      add_card(row)
+      self.contents << add_card(row)
     end
   end
 
