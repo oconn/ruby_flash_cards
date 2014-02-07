@@ -1,5 +1,3 @@
-require 'rainbow'
-
 class View
 
   def greet
@@ -21,7 +19,7 @@ _  /    __  /| |_  /_/ /_  / / /____ \\__  /
 
 STRING
 )
-    puts "We'll be showing you definitions of ruby terms, and it's up to you to figure out the term we're describing.  Enter a term after we give the definition, or say 'exit' at any time to quit the program.  Good luck!\n "
+    puts "We'll be showing you definitions of ruby terms, and it's up to you to figure out the term we're describing.  Enter a term after we give the definition, say 'skip' to skip the card and put it back in the deck, or say 'exit' at any time to quit the program.  Good luck!\n "
   end
 
   def show_definition(definition, card_counter)
@@ -44,12 +42,12 @@ STRING
 
   def game_over(total_cards, correct_cards)
     puts <<-STRING
-
+\033[36m
 GAME OVER
 
 Your score:
 #{correct_cards} correct out of #{total_cards} cards
-
+\033[0m
 STRING
     exit
   end
