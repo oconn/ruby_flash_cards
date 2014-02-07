@@ -27,15 +27,14 @@ end
 class Deck
   attr_accessor :current_card
   attr_reader :csv_file, :contents
-  def initialize#(csv_file)
-    #@csv_file = csv_file
+  def initialize
     @contents = []
     populate_contents
     @current_card = nil
   end
 
   def populate_contents
-    CSV.foreach('test.csv', headers: true, :header_converters => :symbol) do |row|
+    CSV.foreach('flashcard.csv', headers: true, :header_converters => :symbol) do |row|
       self.contents << add_card(row)
     end
   end
