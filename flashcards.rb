@@ -18,16 +18,16 @@ class Controller
 
   def show_flashcard
     give_definition
-    parse_input
+    parse_user_input
   end
 
   def give_definition
     new_card = deck.new_card
     self.current_answer = new_card.answer
-    view.show_definition(new_card)
+    view.show_definition(new_card.definition)
   end
 
-  def parse_input
+  def parse_user_input
     self.input = view.get_input
     if input == "exit"
       break
@@ -50,7 +50,6 @@ class Controller
   attr_accessor :input, :current_answer
 end
 
-
-
+Controller.new.run!
 
 
