@@ -25,6 +25,7 @@ class Deck
   def initialize#(csv_file)
     #@csv_file = csv_file
     @contents = []
+    populate_contents
   end
 
   def populate_contents
@@ -51,19 +52,3 @@ class Deck
   attr_writer :contents
 
 end
-
-# a bit of testing
-questions = [ {definition: "What is your name", answer: "Alex" ,id: "1" },
-              {definition: "What is your age", answer: "27" ,id: "2"},
-              {definition: "What color is an orange", answer: "orange" ,id: "3"}]
-
-my_deck = Deck.new
-
-my_deck.populate_contents
-
-p my_deck.contents[1].definition
-p my_deck.contents[1].answer
-puts my_deck.new_card
-
-
-

@@ -4,12 +4,12 @@ class View
 
 
 #HERE.DOC TO RULE ALL THE FORMATTING!
-<<-STRING
+# <<-STRING
 
 
 
 
-STRING
+# STRING
 
   def greet
     puts "Welcome to Ruby Flashcards!!"
@@ -28,37 +28,37 @@ _  /    __  /| |_  /_/ /_  / / /____ \\__  /
 \\____/  /_/  |_/_/ |_| /_____/ /____/ (_)
 STRING
 ).blink
-    puts "Press enter to play!"
+    puts "play it okay"
 
   end
 
   def show_definition(definition)
+    puts definition
 <<-STRING
 
-
+#{definition}
 
 
 STRING
   end
 
   def get_input
-
+    gets.chomp
   end
 
   def correct_answer
+    puts "yay you did it"
 <<-STRING
 
-
+correct
 STRING
   end
 
   def incorrect_answer
+    puts "incorrect try again"
 <<-STRING
 
-
+incorrect
 STRING
   end
 end
-
-view = View.new
- view.greet

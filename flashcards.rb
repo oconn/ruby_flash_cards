@@ -1,4 +1,5 @@
-# Main file for
+require_relative 'card'
+require_relative 'view'
 
 class Controller
 
@@ -30,19 +31,19 @@ class Controller
   def parse_user_input
     self.input = view.get_input
     if input == "exit"
-      break
+      exit
     else
       check_answer
     end
   end
 
   def check_answer
-    if current_answer == user_input
+    if current_answer == input
       view.correct_answer
       show_flashcard
     else
-      view.incorrent_answer
-      parse_input
+      view.incorrect_answer
+      parse_user_input
     end
   end
 
