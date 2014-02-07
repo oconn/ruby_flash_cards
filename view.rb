@@ -32,6 +32,16 @@ STRING
     gets.chomp
   end
 
+  def skip_card
+    puts (
+<<-STRING
+\033[32m
+It's your funeral!  On to the next card.
+\033[0m
+STRING
+      )
+  end
+
   def correct_answer
     puts <<-STRING
 \033[32m
